@@ -15,7 +15,7 @@ function Navbar() {
     <div>
         <div className='header'>
             <nav className="navbar">
-            <a href="#" className='nav-branding'>Site Name</a>
+            <a href="#" className='nav-branding'>Search GitHub</a>
 
             <ul className={!isActive ? 'nav-menu' : 'nav-menu active'}>
                     <li className="nav-item">

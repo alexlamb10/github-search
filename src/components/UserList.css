@@ -7,9 +7,9 @@
     justify-content: center;
 }
 
-.paginationBttns a{
+.paginationBttns a {
     padding: 10px;
-    margin: 8px;
+    margin: 8px; 
     border-radius: 5px;
     border: 1px solid #262626;
     color: #262626;
@@ -21,6 +21,12 @@
     color: dodgerblue;
 }
 
-.paginationActive {
+.paginationActive a{
+    background-color: #262626;
     color: dodgerblue;
+}
+
+.paginationDisabled a{
+    background-color: lightgray;
+    cursor: not-allowed;
 }
