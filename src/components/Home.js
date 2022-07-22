@@ -3,7 +3,6 @@ import axios from "axios";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import UserList from "./UserList";
-import { dummyData } from "./data";
 
 function Home() {
   const [search, setSearch] = useState(false);
@@ -14,17 +13,17 @@ function Home() {
 
   const  userSearch = async (e) => {
     e.preventDefault();
-  //  const userList =  await axios
-  //     .get(`https://api.github.com/search/users?q=${name} in:login`)
+   const userList =  await axios
+      .get(`https://api.github.com/search/users?q=${name} in:login&per_page=50`)
   
-  //    const {items} = userList.data
-  //     setTotalCount(userList.data.total_count)
-  //     for(let i = 0; i <items.length; i++){
-  //       const userInfo = await axios.get(`https://api.github.com/users/${items[i].login}`)
+     const {items} = userList.data
+      setTotalCount(userList.data.total_count)
+      for(let i = 0; i <items.length; i++){
+        const userInfo = await axios.get(`https://api.github.com/users/${items[i].login}`)
 
-  //       userInfoArray.push(userInfo.data)
-  //     }
-      setUsers(dummyData)
+        userInfoArray.push(userInfo.data)
+      }
+      setUsers(userInfoArray)
 
       
       setSearch(true)
