@@ -1,53 +1,14 @@
 import React, { useState } from "react";
 import ReactPaginate from "react-paginate";
 import "./UserList.css";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faStar} from "@fortawesome/free-solid-svg-icons"
 
-function UserList() {
+function UserList({ users, totalCount, name }) {
   const [pageNumber, setPageNumber] = useState(0);
-  const [users, setUsers] = useState([
-    {
-      name: "Alex",
-      age: 22,
-    },
-    {
-      name: "Mariah",
-      age: 21,
-    },
-    {
-      name: "Stefane",
-      age: 55,
-    },
-    {
-      name: "Cordale",
-      age: 56,
-    },
-    {
-      name: "Preston",
-      age: 32,
-    },
-    {
-      name: "Zack",
-      age: 29,
-    },
-    {
-      name: "Blake",
-      age: 26,
-    },
-    {
-      name: "Courtney",
-      age: 23,
-    },
-    {
-      name: "Amanda",
-      age: 31,
-    },
-    {
-      name: "Savanah",
-      age: 27,
-    },
-  ]);
+  const [bio, setBio] = useState("")
 
-  const usersPerPage = 1;
+  const usersPerPage = 2;
   const pagesVisited = pageNumber * usersPerPage;
 
   // How to show what users should be shown on the pagination
@@ -55,9 +16,26 @@ function UserList() {
     .slice(pagesVisited, pagesVisited + usersPerPage)
     .map((user) => {
       return (
-        <div key={user.name} className="user">
-          <p>name: {user.name}</p>
-          <p>age: {user.age}</p>
+        <div key={user.id} className="user">
+          <div className="pic-name">
+            <img
+              src={user.avatar_url}
+              className="profile-pic"
+              alt={user.login + "profile picture"}
+            />
+            <div className="name-login">
+              <h2>{user.name}</h2>
+              <p>GitHub Handle: {user.login}</p>
+            </div>
+          </div>
+          <div className="about">
+            <p>
+              <FontAwesomeIcon className="icon" icon={faStar} />{" "}
+              {user.followers}
+            </p>
+            <p>Bio: {user.bio}</p>
+            <a href={user.html_url}>Click for more info! </a>
+          </div>
         </div>
       );
     });
@@ -69,7 +47,8 @@ function UserList() {
   };
 
   return (
-    <div>
+    <div className="user-page">
+      <h1>{totalCount} results for {name}</h1>
       {displayUsers}
       <ReactPaginate
         previousLabel={"Previous"}

@@ -14,6 +14,7 @@
     border: 1px solid #262626;
     color: #262626;
     cursor: pointer;
+    transition: 0.5s ease;
 }
 
 .paginationBttns a:hover {
@@ -29,4 +30,74 @@
 .paginationDisabled a{
     background-color: lightgray;
     cursor: not-allowed;
+}
+
+.user-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 84vh;
+}
+
+.user-page{
+    margin: 2vh 0;
+}
+
+.user{
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2vh;
+    padding-bottom: 1vh;
+    border-bottom: 1px solid #262626;
+}
+
+.pic-name{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.name-login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.name-login h2{
+    margin-top: 1vh;
+    font-size: 3vh;
+}
+
+.name-login p {
+    margin-top: 1vh;
+}
+
+p {
+    font-size: 1.5vh;
+}
+
+.profile-pic{
+    width: 10vw;
+}
+
+.about{
+    margin-top: 1vh;
+    margin-left: 5%;
+}
+
+.icon{
+    color: rgb(243, 190, 0);
+}
+
+.about a {
+    color: #262626;
+    cursor: pointer;
+}
+
+.about a:hover{
+    color: dodgerblue;
 }
