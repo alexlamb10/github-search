@@ -14,7 +14,7 @@ function Home() {
   const  userSearch = async (e) => {
     e.preventDefault();
    const userList =  await axios
-      .get(`https://api.github.com/search/users?q=${name} in:login&per_page=50`)
+      .get(`https://api.github.com/search/users?q=${name} in:login&per_page=30`)
   
      const {items} = userList.data
       setTotalCount(userList.data.total_count)

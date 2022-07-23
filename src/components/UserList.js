@@ -8,7 +8,7 @@ function UserList({ users, totalCount, name }) {
   const [pageNumber, setPageNumber] = useState(0);
   const [bio, setBio] = useState("")
 
-  const usersPerPage = 5;
+  const usersPerPage = 3;
   const pagesVisited = pageNumber * usersPerPage;
 
   // How to show what users should be shown on the pagination
