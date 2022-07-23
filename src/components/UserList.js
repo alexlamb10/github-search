@@ -6,7 +6,6 @@ import {faStar} from "@fortawesome/free-solid-svg-icons"
 
 function UserList({ users, totalCount, name }) {
   const [pageNumber, setPageNumber] = useState(0);
-  const [bio, setBio] = useState("")
 
   const usersPerPage = 3;
   const pagesVisited = pageNumber * usersPerPage;
